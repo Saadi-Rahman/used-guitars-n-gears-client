@@ -6,14 +6,14 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        doctortheme: {
+        guitartheme: {
           primary: '#6E300E',
           secondary: '#0A2036',
           accent: "#E4E0DB",
           neutral: "#0A2036",
           "base-100": "#ffffff",
         }
-      }
+      },
     ]
   },
   theme: {

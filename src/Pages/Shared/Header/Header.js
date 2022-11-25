@@ -5,10 +5,10 @@ import logo from '../../../assets/icons/logo1.png';
 const Header = () => {
 
     const menuItems = <React.Fragment>
-        <li><Link to="/" className="btn btn-ghost rounded-lg font-bold text-primary mr-1">Home</Link></li>
-        <li><Link to="/about" className="btn btn-ghost font-bold text-primary mr-1">About</Link></li>
-        <li><Link to="/blog" className="btn btn-ghost font-bold text-primary mr-1">Blog</Link></li>
-        <li><Link to="/login" className="btn btn-ghost rounded-lg font-bold text-primary mr-1">Login</Link></li>
+        <li><Link to="/" className="btn btn-ghost rounded-lg text-lg font-semibold text-primary mr-2">Home</Link></li>
+        <li><Link to="/about" className="btn btn-ghost text-lg font-semibold text-primary mr-2">About</Link></li>
+        <li><Link to="/blog" className="btn btn-ghost text-lg font-semibold text-primary mr-2">Blog</Link></li>
+        <li><Link to="/login" className="btn btn-ghost rounded-lg text-lg font-semibold text-primary mr-2">Login</Link></li>
     </React.Fragment>
 
     return (
@@ -22,7 +22,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/"><img className='w-36 md:w-4/12 py-4' src={logo} alt="" /></Link>
+                <Link to="/"><img className='w-36 md:w-5/12 py-4' src={logo} alt="" /></Link>
             </div>
             <div>
                 <div className="navbar-center hidden lg:flex">
@@ -38,13 +38,13 @@ const Header = () => {
                     </label>
                     <ul tabIndex={3} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                         <li>
-                        <a className="justify-between">
+                        <Link to="" className="justify-between">
                             Profile
                             <span className="badge bg-primary text-white text-xs">Seller</span>
-                        </a>
+                        </Link>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><Link to="">Settings</Link></li>
+                        <li><Link to="">Logout</Link></li>
                     </ul>
                 </div>
             </div>
