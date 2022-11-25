@@ -5,14 +5,14 @@ import logo from '../../../assets/icons/logo1.png';
 const Header = () => {
 
     const menuItems = <React.Fragment>
-        <li><Link to="/" className="btn btn-ghost rounded-lg mr-1">Home</Link></li>
-        <li><Link to="/appointment" className="btn btn-ghost mr-1">About</Link></li>
-        <li><Link to="/about" className="btn btn-ghost mr-1">Blog</Link></li>
-        <li><Link to="/login" className="btn btn-ghost rounded-lg mr-1">Login</Link></li>
+        <li><Link to="/" className="btn btn-ghost rounded-lg font-bold text-primary mr-1">Home</Link></li>
+        <li><Link to="/about" className="btn btn-ghost font-bold text-primary mr-1">About</Link></li>
+        <li><Link to="/blog" className="btn btn-ghost font-bold text-primary mr-1">Blog</Link></li>
+        <li><Link to="/login" className="btn btn-ghost rounded-lg font-bold text-primary mr-1">Login</Link></li>
     </React.Fragment>
 
     return (
-        <div className="navbar flex justify-between bg-accent px-4 lg:px-6">
+        <div className="navbar flex justify-between px-4 lg:px-6">
             <div className="">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/"><img className='w-4/12 py-4' src={logo} alt="" /></Link>
+                <Link to="/"><img className='w-36 md:w-4/12 py-4' src={logo} alt="" /></Link>
             </div>
             <div>
                 <div className="navbar-center hidden lg:flex">

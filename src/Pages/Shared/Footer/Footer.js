@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bgImg from '../../../assets/images/bg-img3.jpg';
+import bgImg from '../../../assets/images/bg-footer.jpg';
 
 const Footer = () => {
     return (
@@ -32,8 +32,8 @@ const Footer = () => {
                     <Link to="/" className="text-accent link link-hover">Cookie policy</Link>
                 </div>
             </div>
-            <div className='text-sm text-accent text-center py-6'>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+            <div className='text-sm text-accent text-center py-6 px-4'>
+                <p>Copyright © 2022 - All right reserved by Used Guitars N Gears Ltd.</p>
             </div>
         </footer>
     );
