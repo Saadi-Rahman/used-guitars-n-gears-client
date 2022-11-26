@@ -10,7 +10,7 @@ const NotFoundRoute = () => {
             </div>
             <p className='text-4xl font-bold text-primary pb-2'>404 Not Found!</p>
             <p>Woops!! Looks like this page doesn't exist!</p>
-            <small>Back to <Link to="/" className="link link-hover text-primary font-semibold">Home</Link></small>
+            <p>Back to <Link to="/" className="link link-hover text-primary font-semibold">Home</Link></p>
         </div>
     );
 };
