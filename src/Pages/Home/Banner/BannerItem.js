@@ -10,11 +10,11 @@ const BannerItem = ({slide}) => {
                 <img src={image} alt='' className="w-full rounded-md" />
             </div>
             <div className="absolute flex flex-col justify-start transform -translate-y-1/2 left-10 md:left-24 top-1/2">
-                <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-accent leading-none md:leading-tight'>
+                <h1 className='text-xl md:text-4xl lg:text-5xl font-bold text-accent font-oswald leading-none md:leading-tight'>
                     Find Your <br /> Dream Guitar!
                 </h1>
                 <div className='w-3/4 py-2 md:py-6'>
-                    <p className='text-xs md:text-xl text-accent'>Used Guitars N Gears Is The World's Largest Musical Instrument Resale Franchise With Retail Locations Throughout The U.S.</p>
+                    <p className='text-xs md:text-lg text-accent md:font-oswald'>Used Guitars N Gears Is The World's Largest Musical Instrument Resale Franchise With Retail Locations Throughout The U.S.</p>
                 </div>
                 <div>
                     <button className="btn btn-xs sm:btn-sm md:btn-md btn-primary base-bg-color mr-3 md:mr-5 text-accent">Buy Guitar</button>

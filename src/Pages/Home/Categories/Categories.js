@@ -29,9 +29,9 @@ const Categories = () => {
 
     return (
         <div className='mx-4 lg:mx-32 mb-20'>
-            <div className='text-center mt-24 mb-10'>
-                <h4 className='text-lg text-primary font-bold uppercase mb-1'>Choose A Category</h4>
-                <h2 className='text-2xl text-secondary font-semibold mb-8'>New guitars and gears are added every minute. What do you want to find out?</h2>
+            <div className='text-center mt-24 mb-12'>
+                <h4 className='text-xl text-primary font-bold font-oswald uppercase mb-1'>Choose A Category</h4>
+                <h2 className='text-xl text-secondary font-oswald mb-8'>Find guitars from the largest collection of Used Guitars N Gears. Choose a category to buy your dream Guitar.</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {

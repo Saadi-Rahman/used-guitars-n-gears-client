@@ -17,7 +17,12 @@ module.exports = {
     ]
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'oswald': ['Oswald', 'sans-serif'],
+        'niagara': ['Niagara Solid', 'sans-serif'],
+      },
+    },
   },
   plugins: [require("daisyui")],
 }

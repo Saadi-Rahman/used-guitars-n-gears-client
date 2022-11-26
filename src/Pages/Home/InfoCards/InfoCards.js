@@ -5,8 +5,8 @@ const InfoCards = () => {
     return (
         <div>
             <div className='mx-4 lg:mx-6 mb-6'>
-                <h4 className='text-lg text-primary font-bold uppercase'>Sell your Guitar</h4>
-                <h2 className='text-3xl text-secondary font-semibold'>You are just 3 steps away to sell! </h2>
+                <h4 className='text-xl text-primary font-bold font-oswald uppercase'>Sell your Guitar</h4>
+                <h2 className='text-xl text-secondary font-oswald'>You are just 3 steps away to sell! </h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 lg:mx-6 mb-20'>
                 <div className="card card-side text-white shadow-xl p-4 rounded-md bg-gradient-to-r from-primary to-secondary">
