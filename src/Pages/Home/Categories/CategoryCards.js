@@ -1,12 +1,12 @@
 import React from 'react';
-import Category from './Category';
 import guitar1 from '../../../assets/images/guitar1.png';
 import guitar2 from '../../../assets/images/guitar2.png';
 import guitar3 from '../../../assets/images/guitar3.png';
+import CategoryCard from './CategoryCard';
 
-const Categories = () => {
+const CategoryCards = () => {
 
-        const categoriesData = [
+        const categoryCards = [
             {
                 id: 1,
                 name: 'Acoustic Guitars',
@@ -35,14 +35,14 @@ const Categories = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    categoriesData.map(category => <Category
-                        key={category.id}
-                        category={category}
-                    ></Category>)
+                    categoryCards.map(categoryCard => <CategoryCard
+                        key={categoryCard.id}
+                        categoryCard={categoryCard}
+                    ></CategoryCard>)
                 }
             </div>
         </div>
     );
 };
 
-export default Categories;
+export default CategoryCards;

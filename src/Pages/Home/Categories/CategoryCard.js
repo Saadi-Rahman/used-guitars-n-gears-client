@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Category = ({category}) => {
-    const {name, description, image} = category;
+const CategoryCard = ({categoryCard}) => {
+    const {name, description, image} = categoryCard;
 
     return (
         <div>
-            <Link to="/">
+            <Link to="/category">
             <div className="card rounded-md transform transition duration-500 hover:bg-accent hover:shadow-md">
                 <figure className="p-12 md:p-8">
                     <img src={image} alt="Shoes" className="rounded-xl" />
@@ -21,4 +21,4 @@ const Category = ({category}) => {
     );
 };
 
-export default Category;
+export default CategoryCard;
