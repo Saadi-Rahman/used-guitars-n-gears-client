@@ -6,7 +6,7 @@ const Product = ({product}) => {
 
     return (
         <div>
-            <Link to="">
+            <Link to="/productDetails">
             <div style={{height: "420px"}} className="card rounded shadow-xl transform transition duration-500 hover:bg-accent">
                 <figure className="h-64">
                     <img src={image} alt="Shoes" className="rounded" />

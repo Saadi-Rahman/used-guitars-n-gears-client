@@ -5,6 +5,7 @@ import Blog from "../Pages/Blog/Blog";
 import Category from "../Pages/Category/Category";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import NotFoundRoute from "../Pages/Shared/NotFoundRoute/NotFoundRoute";
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/category',
                 element: <Category></Category>
+            },
+            {
+                path: '/productDetails',
+                element: <ProductDetails></ProductDetails>
             },
             {
                 path: '/login',
