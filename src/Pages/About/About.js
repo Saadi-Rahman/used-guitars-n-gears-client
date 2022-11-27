@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="hero px-2 md:px-8 lg:px-16 mb-4">
             <div className="hero-content flex-col lg:flex-row-reverse gap-14">
-                <img src={banner} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                <img src={banner} className="w-11/12 md:max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div>
                     <h4 className='text-xl text-primary font-bold font-oswald uppercase mb-2'>About Us</h4>
                     <h2 className='text-xl text-secondary font-oswald'>Used Guitars N Gears is a retail musical instrument store located in Catonsville, "Music City" Maryland. </h2>

@@ -22,7 +22,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className='w-36 md:w-5/12'>
+                <div className='w-32 md:w-5/12'>
                     <Link to="/"><img className='w-full' src={logo} alt="" /></Link>
                 </div>
             </div>
