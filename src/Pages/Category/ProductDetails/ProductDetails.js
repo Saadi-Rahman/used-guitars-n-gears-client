@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import image from '../../../assets/guitars/acoustic3.jpg';
+import image from '../../../assets/images/side-banner.jpg';
 import BookingModal from '../BookingModal/BookingModal';
 
 const ProductDetails = () => {
@@ -29,7 +29,7 @@ const ProductDetails = () => {
                             htmlFor="booking-modal" 
                             className="btn btn-sm btn-primary rounded mr-4"
                         >Booking</label>
-                        <Link to="/category" className="btn btn-sm btn-primary rounded btn-outline">Back to Category</Link>
+                        <Link to="/" className="btn btn-sm btn-primary rounded btn-outline">Back to home</Link>
                     </div>
                 </div>
             </div>

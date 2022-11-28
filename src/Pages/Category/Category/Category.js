@@ -1,35 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import add1 from '../../../assets/guitars/acoustic1.jpg';
-import add2 from '../../../assets/guitars/bass1.jpg';
-import add3 from '../../../assets/guitars/acoustic3.jpg';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import Product from './Product';
 
 const Category = () => {
+    const products = useLoaderData();
+    const [categories, setCategories] = useState([])
 
-    const categoryData = [
-        {
-            id: 1,
-            name: 'Lindo PBEQ Piebald Burl Ash Electro-Acoustic Guitar',
-            description: 'Acoustic guitars remain one of the most popular means of making music in the world and for good reason. These iconic instruments produce a rich, engrossing sound that can lead a band, accompany a singing ensemble, or inspire you to write that next hit.',
-            price: 180,
-            image: add1,
-        },
-        {
-            id: 2,
-            name: 'Electric Guitars',
-            description: 'Electric stringed instruments most traditionally played by being worn over the shoulder (or balanced on the knee), fretted with one hand, and plucked or strummed with the other. When the strings are played, magnetic pickups take the sound and send it to an amplifier to make it louder.',
-            price: 180,
-            image: add2,
-        },
-        {
-            id: 3,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
-            image: add3,
-        },
-    ]
+        useEffect( () =>{
+            fetch('http://localhost:5000/product-categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+        }, [])
 
     return (
         <div className="mx-4 md:mx-10 lg:mx-20">
@@ -37,13 +18,13 @@ const Category = () => {
                 <input id="category-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content lg:px-4 pb-6">
                     <div className='flex justify-between'>
-                        <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-4'>Category Name</h4>
+                        <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-4'>This category has {products.length} products</h4>
                         <label htmlFor="category-drawer-2" className="btn btn-sm btn-primary btn-outline drawer-button rounded lg:hidden">All Categories</label>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
                         {
-                            categoryData.map(product => <Product
-                                key={product.id}
+                            products.map(product => <Product
+                                key={product._id}
                                 product={product}
                             ></Product>)
                         }
@@ -53,10 +34,12 @@ const Category = () => {
                 <div className="drawer-side">
                     <label htmlFor="category-drawer-2" className="drawer-overlay"></label> 
                     <ul className="menu p-4 pt-0 w-56 md:w-64 bg-stone-300 text-base-content">
-                    <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-2'>All Categories</h4>
-                    <li className='mb-2'><Link to="">Acoustic Guitars</Link></li>
-                    <li className='mb-2'><Link to="">Electric Guitars</Link></li>
-                    <li className='mb-2'><Link to="">Bass Guitars</Link></li>
+                    <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-2'>All Categories: {categories.length}</h4>
+                        {
+                            categories.map(category => <li key={category._id} className='mb-2'>
+                                <Link to={`/category/${category._id}`}>{category.category_name}</Link>
+                            </li>)
+                        }
                     </ul>
                 </div>
             </div>

@@ -1,8 +1,5 @@
 import React from 'react';
-import add1 from '../../../assets/guitars/acoustic1.jpg';
-import add2 from '../../../assets/guitars/bass1.jpg';
-import add3 from '../../../assets/guitars/acoustic3.jpg';
-import add4 from '../../../assets/guitars/electric2.jpg';
+import add1 from '../../../assets/images/side-banner.jpg';
 import AdvertisedItem from './AdvertisedItem';
 
 const AdvertisedItems = () => {
@@ -20,50 +17,22 @@ const AdvertisedItems = () => {
             name: 'Electric Guitars',
             description: 'Electric stringed instruments most traditionally played by being worn over the shoulder (or balanced on the knee), fretted with one hand, and plucked or strummed with the other. When the strings are played, magnetic pickups take the sound and send it to an amplifier to make it louder.',
             price: 180,
-            image: add2,
+            image: add1,
         },
         {
             id: 3,
             name: 'Bass Guitars',
             description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
             price: 180,
-            image: add3,
+            image: add1,
         },
         {
             id: 4,
             name: 'Bass Guitars',
             description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
             price: 180,
-            image: add4,
-        },
-        {
-            id: 5,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
-            image: add3,
-        },
-        {
-            id: 6,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
-            image: add4,
-        },
-        {
-            id: 7,
-            name: 'Electric Guitars',
-            description: 'Electric stringed instruments most traditionally played by being worn over the shoulder (or balanced on the knee), fretted with one hand, and plucked or strummed with the other. When the strings are played, magnetic pickups take the sound and send it to an amplifier to make it louder.',
-            price: 180,
-            image: add2,
-        },
-        {
-            id: 8,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
-            image: add3,
-        },
+            image: add1,
+        }
     ]
 
     return (

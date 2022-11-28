@@ -2,7 +2,7 @@ import React from 'react';
 import AdvertisedItems from '../Advertisements/AdvertisedItems';
 import Banner from '../Banner/Banner';
 import Brands from '../Brands/Brands';
-import CategoryCards from '../Categories/CategoryCards';
+import Categories from '../Categories/Categories';
 import InfoCards from '../InfoCards/InfoCards';
 import Welcome from '../Welcome/Welcome';
 
@@ -11,7 +11,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Welcome></Welcome>
-            <CategoryCards></CategoryCards>
+            <Categories></Categories>
             <InfoCards></InfoCards>
             <AdvertisedItems></AdvertisedItems>
             <Brands></Brands>
