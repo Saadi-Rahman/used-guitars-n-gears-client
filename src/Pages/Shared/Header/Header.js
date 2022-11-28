@@ -8,6 +8,7 @@ const Header = () => {
         <li><Link to="/" className="btn btn-ghost rounded lg:text-lg font-oswald text-primary mr-1">Home</Link></li>
         <li><Link to="/about" className="btn btn-ghost rounded lg:text-lg font-oswald text-primary mr-1">About</Link></li>
         <li><Link to="/blog" className="btn btn-ghost rounded lg:text-lg font-oswald text-primary mr-1">Blog</Link></li>
+        <li><Link to="/dashboard" className="btn btn-ghost rounded lg:text-lg font-oswald text-primary mr-1">Dashboard</Link></li>
         <li><Link to="/login" className="btn btn-ghost rounded lg:text-lg font-oswald text-primary mr-1">Login</Link></li>
     </React.Fragment>
 
@@ -28,13 +29,13 @@ const Header = () => {
             </div>
             <div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal pb-1.5">
                         {menuItems}
                     </ul>
                 </div>
                 <div className="dropdown dropdown-end ml-3">
-                    <label tabIndex={2} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
+                    <label tabIndex={2} className="btn btn-ghost btn-circle avatar w-10 md:w-12">
+                        <div className="w-full rounded-full">
                         <img src="https://placeimg.com/80/80/people" alt='' />
                         </div>
                     </label>
