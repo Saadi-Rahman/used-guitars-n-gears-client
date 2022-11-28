@@ -14,8 +14,10 @@ const Product = ({product}) => {
                 <div className="p-3">
                     <h4 className="text-secondary font-oswald pb-2">{name}</h4>
                     <h2 className='text-xl text-primary font-bold font-oswald'>Price: ${price}</h2>
-                    <small>Used - Excellent</small>
-                    <p className='text-sm pt-1 font-semibold'>Denver, Colorado</p>
+                    <p className='text-xs font-semibold'>Used - Excellent</p>
+                    <div className='fixed bottom-4'>
+                        <small>28 Nov 2022 | Denver, Colorado</small>
+                    </div>
                 </div>
             </div>
             </Link>

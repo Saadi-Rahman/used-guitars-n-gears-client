@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import add1 from '../../assets/guitars/acoustic1.jpg';
-import add2 from '../../assets/guitars/bass1.jpg';
-import add3 from '../../assets/guitars/acoustic3.jpg';
+import add1 from '../../../assets/guitars/acoustic1.jpg';
+import add2 from '../../../assets/guitars/bass1.jpg';
+import add3 from '../../../assets/guitars/acoustic3.jpg';
 import Product from './Product';
 
 const Category = () => {
@@ -35,12 +35,12 @@ const Category = () => {
         <div className="mx-4 md:mx-10 lg:mx-20">
             <div className="drawer drawer-mobile">
                 <input id="category-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
+                <div className="drawer-content lg:px-4 pb-6">
                     <div className='flex justify-between'>
                         <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-4'>Category Name</h4>
                         <label htmlFor="category-drawer-2" className="btn btn-sm btn-primary btn-outline drawer-button rounded lg:hidden">All Categories</label>
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
                         {
                             categoryData.map(product => <Product
                                 key={product.id}
@@ -52,7 +52,7 @@ const Category = () => {
 
                 <div className="drawer-side">
                     <label htmlFor="category-drawer-2" className="drawer-overlay"></label> 
-                    <ul className="menu p-4 pt-0 w-56 md:w-72 bg-stone-300 text-base-content">
+                    <ul className="menu p-4 pt-0 w-56 md:w-64 bg-stone-300 text-base-content">
                     <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-2'>All Categories</h4>
                     <li className='mb-2'><Link to="">Acoustic Guitars</Link></li>
                     <li className='mb-2'><Link to="">Electric Guitars</Link></li>
