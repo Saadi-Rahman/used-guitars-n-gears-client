@@ -1,13 +1,12 @@
 import React from 'react';
-import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import logo from '../../assets/icons/logo1.png';
 
-const Login = () => {
+const SignUp = () => {
     const {register, formState: { errors }, handleSubmit} = useForm();
     
-    const handleLogin = data =>{
+    const handleSignUp = (data) =>{
         console.log(data);
     }
 
@@ -19,7 +18,17 @@ const Login = () => {
                         <img src={logo} className="w-full" alt="" />
                     </div>
                     
-                    <form onSubmit={handleSubmit(handleLogin)}>
+                    <form onSubmit={handleSubmit(handleSignUp)}>
+                        <div className="form-control">
+                            <label className="label"><span className="label-text text-primary font-oswald">Name</span></label>
+                            <input type="text" placeholder="Enter your Name" className="input input-bordered"
+                                {...register("name", {
+                                    required: "Name is required!"
+                                })}
+                            />
+                            {errors.name && <small className='text-red-500'>{errors.name.message}</small>}
+                        </div>
+
                         <div className="form-control">
                             <label className="label"><span className="label-text text-primary font-oswald">Email</span></label>
                             <input type="email" placeholder="Enter your email" className="input input-bordered"
@@ -35,31 +44,26 @@ const Login = () => {
                             <input type="password" placeholder="Enter your password" className="input input-bordered"
                                 {...register("password", {
                                     required: "Password is required!",
-                                    minLength: {value: 6, message: "Password must be 6 characters or longer!"}
+                                    minLength: {value: 6, message: "Password must be 6 characters or longer!"},
+                                    pattern: {value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/, message: "Password must have a special character with a lower case, upper case and a number!"}
                                 })} 
                             />
                             {errors.password && <small className='text-red-500'>{errors.password?.message}</small>}
-                            {/* {loginError && <small className='text-red-500'>{loginError}</small>} */}
+                            {/* {signUpError && <small className='text-red-500'>{signUpError}</small>} */}
                         </div>
 
                         <div className="form-control mt-6">
-                            <input type="submit" value="Login" className="btn btn-primary text-white font-oswald tracking-widest" />
+                            <input type="submit" value="Sign Up" className="btn btn-primary text-white font-oswald tracking-widest" />
                         </div>
 
                         <label className="label py-0">
-                            <small>New to Used Guitars N Gears? <Link to="/signup" className="link link-hover text-primary">Create an Account</Link></small>
+                            <small>Already have an Account? <Link to="/login" className="link link-hover text-primary">Please Login</Link></small>
                         </label>
                     </form>
-
-                    <div className="divider my-0 font-oswald">OR</div>
-
-                    <div className="form-control mt-2">
-                        <button className="btn btn-outline btn-primary font-oswald tracking-wider"> <FaGoogle className='mr-2' /> Continue with Google</button>
-                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
