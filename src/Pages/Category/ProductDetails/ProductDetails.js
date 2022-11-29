@@ -6,7 +6,7 @@ import BookingModal from '../BookingModal/BookingModal';
 const ProductDetails = () => {
     const productDetails = useLoaderData();
     const {_id, category_id, title, resale_price, original_price, image_url, condition, condition_type, year_of_purchase, years_of_use, seller_name, posted_time, location, description} = productDetails;
-    const [selectedProduct, setSelectedProduct] = useState({});
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
 
     return (
@@ -38,9 +38,13 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
-            <BookingModal
-                selectedProduct={selectedProduct} 
-            ></BookingModal>
+            {
+                selectedProduct &&
+                <BookingModal
+                    selectedProduct={selectedProduct}
+                    setSelectedProduct={setSelectedProduct}
+                ></BookingModal>
+            }
         </div>
     );
 };
