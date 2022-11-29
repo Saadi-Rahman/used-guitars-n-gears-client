@@ -1,14 +1,16 @@
 import React from 'react';
 
-const BookingModal = () => {
+const BookingModal = ({selectedProduct}) => {
+    const {title, resale_price} = selectedProduct;
+
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative bg-stone-100">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h2 className="text-lg text-primary font-semibold font-oswald mb-1">Lindo PBEQ Piebald Burl Ash Electro-Acoustic Guitar</h2>
-                    <h4 className="text-sm text-secondary font-semibold font-oswald mb-3">Price: $180</h4>
+                    <h2 className="text-lg text-primary font-semibold font-oswald mb-1">{title}</h2>
+                    <h4 className="text-sm text-secondary font-semibold font-oswald mb-3">Price: ${resale_price}</h4>
                     <form className='flex flex-col'>
                         <input name='name' type="text" defaultValue="{user?.displayName}" disabled className="input input-bordered input-primary w-full mb-3" required />
                         <input name='email' type="email" defaultValue="{user?.email}" disabled className="input input-bordered w-full mb-3" required />

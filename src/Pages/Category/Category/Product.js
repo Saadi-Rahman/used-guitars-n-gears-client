@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {title, resale_price, image_url, condition, condition_type, posted_time, location} = product;
+    const {_id, title, resale_price, image_url, condition, condition_type, posted_time, location} = product;
 
     return (
         <div>
-            <Link to="/productDetails">
+            <Link to={`/productDetails/${_id}`}>
             <div style={{height: "420px"}} className="card rounded shadow-xl transform transition duration-500 hover:bg-accent">
                 <figure className="h-64">
                     <img src={image_url} alt="Shoes" className="rounded" />

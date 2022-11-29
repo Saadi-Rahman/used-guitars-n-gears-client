@@ -16,7 +16,6 @@ const Categories = () => {
                 <h4 className='text-xl text-primary font-bold font-oswald uppercase mb-1'>Choose A Category</h4>
                 <h2 className='text-xl text-secondary font-oswald mb-8'>Find guitars from the largest collection of Used Guitars N Gears. Choose a category to buy your dream Guitar.</h2>
             </div>
-            <h4>All Categories: {categories.length}</h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     categories.map(category => <CategoryCard

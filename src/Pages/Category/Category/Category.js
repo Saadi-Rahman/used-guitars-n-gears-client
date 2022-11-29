@@ -4,13 +4,14 @@ import Product from './Product';
 
 const Category = () => {
     const products = useLoaderData();
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
 
         useEffect( () =>{
             fetch('http://localhost:5000/product-categories')
             .then(res => res.json())
             .then(data => setCategories(data))
         }, [])
+
 
     return (
         <div className="mx-4 md:mx-10 lg:mx-20">
