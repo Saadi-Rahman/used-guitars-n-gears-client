@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import CategoryItems from '../CategoryItems/CategoryItems';
 
 const Category = () => {
-    const [categories, setCategories] = useState([]);
 
-        useEffect( () =>{
-            fetch('http://localhost:5000/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-        }, [])
+    const {data:categories = []} = useQuery({
+        queryKey: ['categories'],
+        queryFn: () => fetch('http://localhost:5000/categories')
+        .then(res => res.json())
+    })
 
     return (
         <div className="mx-4 md:mx-10 lg:mx-20">
