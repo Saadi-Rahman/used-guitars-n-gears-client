@@ -18,7 +18,7 @@ const BannerItem = ({slide}) => {
                     <p className='text-xs md:text-lg text-accent md:font-oswald'>Used Guitars N Gears Is The World's Largest Musical Instrument Resale Franchise With Retail Locations Throughout The U.S.</p>
                 </div>
                 <div>
-                    <Link to="" className="btn btn-xs sm:btn-sm md:btn-md btn-primary base-bg-color mr-3 md:mr-5 text-accent">Buy Guitar</Link>
+                    <Link to="/allProducts" className="btn btn-xs sm:btn-sm md:btn-md btn-primary base-bg-color mr-3 md:mr-5 text-accent">Buy Guitar</Link>
                     <Link to="" className="btn btn-xs sm:btn-sm md:btn-md glass text-accent">Sell Guitar</Link>
                 </div>
             </div>

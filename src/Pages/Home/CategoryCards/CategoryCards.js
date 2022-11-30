@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CategoryCard from './CategoryCard';
 
-const Categories = () => {
-        const [categories, setCategories] = useState([])
+const CategoryCards = () => {
+    const [categories, setCategories] = useState([])
 
         useEffect( () =>{
-            fetch('http://localhost:5000/product-categories')
+            fetch('http://localhost:5000/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
         }, [])
@@ -28,4 +28,4 @@ const Categories = () => {
     );
 };
 
-export default Categories;
+export default CategoryCards;

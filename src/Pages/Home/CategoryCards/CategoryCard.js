@@ -6,7 +6,7 @@ const CategoryCard = ({category}) => {
 
     return (
         <div>
-            <Link to={`/category/${_id}`}>
+            <Link to={`/categories/${category_name}`}>
             <div className="card rounded-md transform transition duration-500 hover:bg-accent hover:shadow-md">
                 <figure className="p-12 md:p-8">
                     <img src={image} alt="Shoes" className="rounded-xl" />

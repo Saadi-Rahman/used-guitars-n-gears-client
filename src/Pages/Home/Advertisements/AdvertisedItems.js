@@ -6,32 +6,52 @@ const AdvertisedItems = () => {
     const advertisedItemsData = [
         {
             id: 1,
-            name: 'Lindo PBEQ Piebald Burl Ash Electro-Acoustic Guitar',
-            description: 'Acoustic guitars remain one of the most popular means of making music in the world and for good reason. These iconic instruments produce a rich, engrossing sound that can lead a band, accompany a singing ensemble, or inspire you to write that next hit.',
-            price: 180,
+            name: 'Martin Dreadnought Jr Electro Acoustic, Spruce',
+            price: "349.50",
             image: "https://i.postimg.cc/hjC0PpNb/acoustic3.jpg",
         },
         {
             id: 2,
-            name: 'Electric Guitars',
-            description: 'Electric stringed instruments most traditionally played by being worn over the shoulder (or balanced on the knee), fretted with one hand, and plucked or strummed with the other. When the strings are played, magnetic pickups take the sound and send it to an amplifier to make it louder.',
-            price: 180,
-            image: "https://i.postimg.cc/HL92Fp2N/bass1.jpg",
-        },
-        {
-            id: 3,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
+            name: 'Fender Made in Japan Telecaster 1989-1990 Blonde',
+            price: "587.44",
             image: "https://i.postimg.cc/bNSRp0gk/electric1.jpg",
         },
         {
+            id: 3,
+            name: 'Cort Artisan Series A5PLUSFMMHOPN 5-String Bass',
+            price: "1,189.90",
+            image: "https://i.postimg.cc/yxtX0W1D/bass5.jpg",
+        },
+        {
             id: 4,
-            name: 'Bass Guitars',
-            description: 'Bass has always been one of the most integral parts of any ensemble, and over the past several decades, the guitar form of this low-end instrument has worked its way into most every genre. Here on Reverb, browse one of the widest selections of new, used, and vintage bass guitars anywhere in the world.',
-            price: 180,
+            name: 'Bacchus Global Series WL5 ASH STB Jazz Bass',
+            price: "849.50",
+            image: "https://i.postimg.cc/ZnCx96Sk/bass4.jpg",
+        },
+        {
+            id: 5,
+            name: 'Gibson Custom Shop Les Paul Standard 2007',
+            price: "9,863.32",
+            image: "https://i.postimg.cc/zGmFBL2M/electric2.jpg",
+        },
+        {
+            id: 6,
+            name: '2021 Fender Player Series Precision Bass Buttercream',
+            price: "699.77",
+            image: "https://i.postimg.cc/HL92Fp2N/bass1.jpg",
+        },
+        {
+            id: 7,
+            name: 'EPIPHONE SG BASS (EB-3; 2-PICKUP) - CHERRY',
+            price: "349.50",
+            image: "https://i.postimg.cc/1RjKk7Gy/bass2.jpg",
+        },
+        {
+            id: 8,
+            name: 'Second Hand Ibanez SRX705 5 String Bass Guitar',
+            price: "895.95",
             image: "https://i.postimg.cc/76PVkptZ/bass3.jpg",
-        }
+        },
     ]
 
     return (

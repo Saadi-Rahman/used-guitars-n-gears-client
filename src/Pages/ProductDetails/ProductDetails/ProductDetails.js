@@ -5,7 +5,7 @@ import BookingModal from '../BookingModal/BookingModal';
 
 const ProductDetails = () => {
     const productDetails = useLoaderData();
-    const {_id, category_id, title, resale_price, original_price, image_url, condition, condition_type, year_of_purchase, years_of_use, seller_name, posted_time, location, description} = productDetails;
+    const {_id, category_name, title, resale_price, original_price, image_url, condition, condition_type, year_of_purchase, years_of_use, seller_name, posted_time, location, description} = productDetails;
     const [selectedProduct, setSelectedProduct] = useState(null);
 
 
@@ -34,7 +34,7 @@ const ProductDetails = () => {
                             htmlFor="booking-modal" 
                             className="btn btn-sm btn-primary rounded mr-4"
                         >Booking</label>
-                        <Link to={`/category/${category_id}`} className="btn btn-sm btn-primary rounded btn-outline">Go Back</Link>
+                        <Link to={`/categories/${category_name}`} className="btn btn-sm btn-primary rounded btn-outline">Go Back</Link>
                     </div>
                 </div>
             </div>
