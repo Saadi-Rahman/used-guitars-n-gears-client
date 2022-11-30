@@ -1,14 +1,51 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import logo from '../../assets/icons/logo1.png';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
     const {register, formState: { errors }, handleSubmit} = useForm();
+    const {login, providerLogin} = useContext(AuthContext);
+    const [loginError, setLoginError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
+
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            toast.success('Login Success!!');
+            navigate(from, {replace: true});
+        })
+        .catch(error => console.error(error));
+    }
+
     
     const handleLogin = data =>{
         console.log(data);
+        setLoginError("");
+        login(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, {replace: true});
+                // setLoginUserEmail(data.email);
+                toast.success('Successfully Logged in!');
+            })
+            .catch(error => {
+                console.log(error.message)
+                setLoginError(error.message)
+            });
     }
 
     return (
@@ -39,7 +76,7 @@ const Login = () => {
                                 })} 
                             />
                             {errors.password && <small className='text-red-500'>{errors.password?.message}</small>}
-                            {/* {loginError && <small className='text-red-500'>{loginError}</small>} */}
+                            {loginError && <small className='text-red-500'>{loginError}</small>}
                         </div>
 
                         <div className="form-control mt-6">
@@ -54,7 +91,7 @@ const Login = () => {
                     <div className="divider my-0 font-oswald">OR</div>
 
                     <div className="form-control mt-2">
-                        <button className="btn btn-outline btn-primary font-oswald tracking-wider"> <FaGoogle className='mr-2' /> Continue with Google</button>
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary font-oswald tracking-wider"> <FaGoogle className='mr-2' /> Continue with Google</button>
                     </div>
                 </div>
             </div>

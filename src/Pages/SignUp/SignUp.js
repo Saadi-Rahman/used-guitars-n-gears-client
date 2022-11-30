@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import logo from '../../assets/icons/logo1.png';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
     const {register, formState: { errors }, handleSubmit} = useForm();
+    const {createUser, updateUser} = useContext(AuthContext);
+    const [signUpError, setSignUpError] = useState('');
     
     const handleSignUp = (data) =>{
         console.log(data);
+        setSignUpError('');
+        createUser(data.email, data.password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            toast.success('User Created Successfully!')
+            const userInfo = {
+                displayName: data.name
+            }
+            updateUser(userInfo)
+                .then(() =>{})
+                .catch(error => console.log(error));
+        })
+        .catch(error => {
+            console.log(error)
+            setSignUpError(error.message)
+        });
     }
 
     return (
@@ -49,7 +70,7 @@ const SignUp = () => {
                                 })} 
                             />
                             {errors.password && <small className='text-red-500'>{errors.password?.message}</small>}
-                            {/* {signUpError && <small className='text-red-500'>{signUpError}</small>} */}
+                            {signUpError && <small className='text-red-500'>{signUpError}</small>}
                         </div>
 
                         <div className="form-control mt-6">

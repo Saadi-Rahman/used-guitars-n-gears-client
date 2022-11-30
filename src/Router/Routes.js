@@ -16,6 +16,7 @@ import AllSellers from "../Pages/Dashboard/AllSellers/AllSellers";
 import AllBuyers from "../Pages/Dashboard/AllBuyers/AllBuyers";
 import ReportedItems from "../Pages/Dashboard/ReportedItems/ReportedItems";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             {
                 path: '/dashboard',
