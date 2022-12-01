@@ -21,10 +21,12 @@ const Category = () => {
                 <div className="drawer-side">
                     <label htmlFor="category-drawer-2" className="drawer-overlay"></label> 
                     <ul className="menu p-4 pt-0 w-56 md:w-64 bg-stone-300 text-base-content">
-                    <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-2'>All Categories: {categories.length}</h4>
+                    <div className='bg-stone-400 rounded-t-md p-3 mb-2'>
+                        <h4 className='text-sm text-primary font-bold font-oswald tracking-wider uppercase text-center'>All Categories: {categories.length}</h4>
+                    </div>
                         {
                             categories.map(category => <li key={category._id} className='mb-2'>
-                                <Link to={`/categories/${category.category_name}`}>{category.category_name}</Link>
+                                <Link to={`/categories/${category.category_name}`} className="font-oswald text-secondary">{category.category_name}</Link>
                             </li>)
                         }
                     </ul>

@@ -9,7 +9,7 @@ const CategoryItems = () => {
         <div>
             <div className='flex justify-between'>
                 <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-4'>This Category has {products.length} Guitars available</h4>
-                <label htmlFor="category-drawer-2" className="btn btn-sm btn-primary btn-outline drawer-button rounded lg:hidden">All Categories</label>
+                <label htmlFor="category-drawer-2" className="btn btn-sm btn-primary btn-outline font-oswald drawer-button rounded lg:hidden">All Categories</label>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
                 {

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({selectedProduct, setSelectedProduct}) => {
     const {title, resale_price} = selectedProduct; // selectedProduct is another name of productDetails
+    const {user} = useContext(AuthContext);
 
     const handleBooking = event => {
         event.preventDefault();
@@ -14,6 +17,7 @@ const BookingModal = ({selectedProduct, setSelectedProduct}) => {
 
         const booking = {
             selectedProduct: title,
+            price: resale_price,
             buyer: name,
             email,
             phone,
@@ -22,8 +26,20 @@ const BookingModal = ({selectedProduct, setSelectedProduct}) => {
         }
 
         // TODO: send data to the server. Once data is saved then close the modal and display success toast
-        console.log(booking);
-        setSelectedProduct(null);
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setSelectedProduct(null);
+            toast.success('Booking Confirmed!');
+        })
+
     }
 
     return (
@@ -36,8 +52,8 @@ const BookingModal = ({selectedProduct, setSelectedProduct}) => {
                     <h4 className="text-sm text-secondary font-semibold font-oswald mb-3">Price: ${resale_price}</h4>
 
                     <form onSubmit={handleBooking} className='flex flex-col'>
-                        <input name='name' type="text" defaultValue="{user?.displayName}" disabled className="input input-bordered input-primary w-full mb-3" required />
-                        <input name='email' type="email" defaultValue="{user?.email}" disabled className="input input-bordered w-full mb-3" required />
+                        <input name='name' type="text" defaultValue={user?.displayName} disabled className="input input-bordered input-primary w-full mb-3" required />
+                        <input name='email' type="email" defaultValue={user?.email} disabled className="input input-bordered w-full mb-3" required />
                         <input name='phone' type="text" placeholder="Phone Number" className="input input-bordered w-full mb-3" required />
                         <input name='location' type="text" placeholder="Meeting location" className="input input-bordered w-full mb-3" required />
                         <textarea name='message' className="textarea textarea-bordered w-full mb-3" placeholder="Type your Message" required></textarea>

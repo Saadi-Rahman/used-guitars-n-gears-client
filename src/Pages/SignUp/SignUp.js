@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import logo from '../../assets/icons/logo1.png';
@@ -9,9 +9,9 @@ const SignUp = () => {
     const {register, formState: { errors }, handleSubmit} = useForm();
     const {createUser, updateUser} = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+    const navigate = useNavigate();
     
     const handleSignUp = (data) =>{
-        console.log(data);
         setSignUpError('');
         createUser(data.email, data.password)
         .then(result =>{
@@ -22,13 +22,31 @@ const SignUp = () => {
                 displayName: data.name
             }
             updateUser(userInfo)
-                .then(() =>{})
+                .then(() =>{
+                    saveUser(data.name, data.email);
+                })
                 .catch(error => console.log(error));
         })
         .catch(error => {
             console.log(error)
             setSignUpError(error.message)
         });
+    }
+
+    const saveUser = (name, email) =>{
+        const user = {name, email};
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log('save user', data);
+            navigate('/');
+        })
     }
 
     return (
@@ -74,7 +92,7 @@ const SignUp = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <input type="submit" value="Sign Up" className="btn btn-primary text-white font-oswald tracking-widest" />
+                            <input type="submit" value="Sign Up" className="btn btn-primary text-white font-bold tracking-widest" />
                         </div>
 
                         <label className="label py-0">

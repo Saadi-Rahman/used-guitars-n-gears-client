@@ -80,10 +80,10 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <input type="submit" value="Login" className="btn btn-primary text-white font-oswald tracking-widest" />
+                            <input type="submit" value="Login" className="btn btn-primary text-white font-bold tracking-widest" />
                         </div>
 
-                        <label className="label py-0">
+                        <label className="label py-0 mb-2">
                             <small>New to Used Guitars N Gears? <Link to="/signup" className="link link-hover text-primary">Create an Account</Link></small>
                         </label>
                     </form>
