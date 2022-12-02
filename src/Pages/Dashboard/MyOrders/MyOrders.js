@@ -39,6 +39,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
+                            bookings && 
                             bookings?.map((booking, i) => <tr 
                                 key={booking._id}
                                 className="hover:bg-accent text-sm">
