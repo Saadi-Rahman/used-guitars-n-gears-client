@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
+import useAdmin from '../hooks/useAdmin';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Header from '../Pages/Shared/Header/Header';
 
 const DashboardLayout = () => {
+    const {user} = useContext(AuthContext);
+    const [isAdmin] = useAdmin(user?.email);
+
     return (
         <div>
             <Header></Header>
@@ -22,10 +27,14 @@ const DashboardLayout = () => {
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/addProduct">Add A Product</Link></li>
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/myProducts">My Products</Link></li>
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/myBuyers">My Buyers</Link></li>
-                            <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allSellers">All Sellers</Link></li>
-                            <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allBuyers">All Buyers</Link></li>
-                            <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allUsers">All Users</Link></li>
-                            <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/reportedItems">Reported Items</Link></li>
+                            {
+                                isAdmin && <>
+                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allSellers">All Sellers</Link></li>
+                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allBuyers">All Buyers</Link></li>
+                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allUsers">All Users</Link></li>
+                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/reportedItems">Reported Items</Link></li>
+                                </>
+                            }
                         </ul>
                     </div>
                 </div>
