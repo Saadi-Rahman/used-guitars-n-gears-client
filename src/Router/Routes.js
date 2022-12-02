@@ -37,17 +37,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allProducts',
-                element: <Category></Category>,
+                element: <PrivateRoute><Category></Category></PrivateRoute>,
                 loader: () => fetch(`https://used-guitars-n-gears-server.vercel.app/products`)
             },
             {
                 path: '/categories/:category_name',
-                element: <Category></Category>,
+                element: <PrivateRoute><Category></Category></PrivateRoute>,
                 loader: ({params}) => fetch(`https://used-guitars-n-gears-server.vercel.app/categories/${params.category_name}`)
             },
             {
                 path: '/productDetails/:id',
-                element: <ProductDetails></ProductDetails>,
+                element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`https://used-guitars-n-gears-server.vercel.app/products/${params.id}`)
             },
             {
