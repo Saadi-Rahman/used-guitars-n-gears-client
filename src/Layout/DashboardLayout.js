@@ -29,8 +29,6 @@ const DashboardLayout = () => {
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/myBuyers">My Buyers</Link></li>
                             {
                                 isAdmin && <>
-                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allSellers">All Sellers</Link></li>
-                                    <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allBuyers">All Buyers</Link></li>
                                     <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/allUsers">All Users</Link></li>
                                     <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/reportedItems">Reported Items</Link></li>
                                 </>

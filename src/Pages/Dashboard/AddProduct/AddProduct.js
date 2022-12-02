@@ -34,7 +34,7 @@ const AddProduct = () => {
                     location: data.location,
                     posted_time: data.posted_time,
                     description: data.description,
-                    image_url: imgData.data.image_url
+                    image_url: imgData.data.url
                 }
 
                 // save newProduct info to MongoDB
