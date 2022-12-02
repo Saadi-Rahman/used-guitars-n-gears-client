@@ -26,7 +26,7 @@ const BookingModal = ({selectedProduct, setSelectedProduct}) => {
         }
 
         // TODO: send data to the server. Once data is saved then close the modal and display success toast
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://used-guitars-n-gears-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

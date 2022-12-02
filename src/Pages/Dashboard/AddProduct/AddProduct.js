@@ -38,7 +38,7 @@ const AddProduct = () => {
                 }
 
                 // save newProduct info to MongoDB
-                fetch('http://localhost:5000/newProducts', {
+                fetch('https://used-guitars-n-gears-server.vercel.app/newProducts', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

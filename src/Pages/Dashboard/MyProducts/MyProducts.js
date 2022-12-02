@@ -7,7 +7,7 @@ const MyProducts = () => {
         queryKey: ['newProducts'],
         queryFn: async () => {
             try{
-                const res = await fetch('http://localhost:5000/newProducts', {
+                const res = await fetch('https://used-guitars-n-gears-server.vercel.app/newProducts', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -47,7 +47,7 @@ const MyProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        newProducts.map((newProduct, i) => <tr key={newProduct._id}>
+                        newProducts.map((newProduct, i) => <tr key={newProduct._id} className="hover:bg-accent">
                             <th className="bg-transparent">{i+1}</th>
                             <td className="bg-transparent">
                                 <div className="avatar">
@@ -60,7 +60,9 @@ const MyProducts = () => {
                             <td className="bg-transparent">{newProduct.resale_price}</td>
                             <td className="bg-transparent">{newProduct.location}</td>
                             <td className="bg-transparent">
-                                <label className="btn btn-xs btn-outline btn-error">Delete</label>
+                                <label className="btn btn-xs btn-square btn-outline btn-secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                </label>
                             </td>
                         </tr>)
                     }
