@@ -17,6 +17,7 @@ import ProductDetails from "../Pages/ProductDetails/ProductDetails/ProductDetail
 import Category from "../Pages/Category/Category/Category";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
     {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allBuyers',
                 element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/allUsers',
+                element: <AllUsers></AllUsers>
             },
             {
                 path: '/dashboard/reportedItems',
