@@ -43,7 +43,7 @@ const SignUp = () => {
     // save user data to mongoDB
     const saveUser = (name, email) =>{
         const user = {name, email};
-        fetch('https://used-guitars-n-gears-server.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

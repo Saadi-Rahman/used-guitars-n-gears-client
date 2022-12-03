@@ -31,6 +31,7 @@ const AddProduct = () => {
                     condition: data.condition,
                     condition_type: data.condition_type,
                     seller_name: data.seller_name,
+                    seller_phone: data.seller_phone,
                     location: data.location,
                     posted_time: data.posted_time,
                     description: data.description,
@@ -38,7 +39,7 @@ const AddProduct = () => {
                 }
 
                 // save newProduct info to MongoDB
-                fetch('https://used-guitars-n-gears-server.vercel.app/newProducts', {
+                fetch('http://localhost:5000/newProducts', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -139,14 +140,25 @@ const AddProduct = () => {
                             </div>
                         </div>
 
-                        <div className="form-control">
-                            <label className="label"><span className="label-text font-oswald text-primary">Seller Name</span></label>
-                            <input type="text" placeholder="Enter your Name" className="input input-bordered"
-                                {...register("seller_name", {
-                                    required: "Name is required!"
-                                })}
-                            />
-                            {errors.seller_name && <small className='text-red-500'>{errors.seller_name.message}</small>}
+                        <div className='flex flex-col md:flex-row gap-4'>
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text font-oswald text-primary">Seller Name</span></label>
+                                <input type="text" placeholder="Used or New?" className="input input-bordered"
+                                    {...register("seller_name", {
+                                        required: "Seller name is Required!"
+                                    })}
+                                />
+                                {errors.seller_name && <small className='text-red-500'>{errors.seller_name.message}</small>}
+                            </div>
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text font-oswald text-primary">Phone</span></label>
+                                <input type="text" placeholder="Enter your phone number" className="input input-bordered"
+                                    {...register("seller_phone", {
+                                        required: "Phone number is Required!"
+                                    })}
+                                />
+                                {errors.seller_phone && <small className='text-red-500'>{errors.seller_phone.message}</small>}
+                            </div>
                         </div>
 
                         <div className='flex flex-col md:flex-row gap-4'>

@@ -5,7 +5,7 @@ const CategoryCards = () => {
     const [categories, setCategories] = useState([])
 
         useEffect( () =>{
-            fetch('https://used-guitars-n-gears-server.vercel.app/categories')
+            fetch('http://localhost:5000/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
         }, [])
