@@ -1,11 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import ConfirmModal from '../../Shared/ConfirmModal/ConfirmModal';
 import Loading from '../../Shared/Loading/Loading';
 
 const MyProducts = () => {
     const [deleteNewProduct, setDeleteNewProduct] = useState(null);
-    const {data: newProducts, isLoading } = useQuery({
+
+    const closeModal = () => {
+        setDeleteNewProduct(null);
+    }
+
+
+    const {data: newProducts, isLoading, refetch } = useQuery({
         queryKey: ['newProducts'],
         queryFn: async () => {
             try{
@@ -22,6 +29,24 @@ const MyProducts = () => {
             }
         }
     });
+
+
+    const handleDeleteNewProduct = newProduct => {
+        fetch(`http://localhost:5000/newProducts/${newProduct._id}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+                toast.success(`${newProduct.title} deleted successfully!`)
+            }
+        })
+    }
+
 
     if(isLoading){
         return <Loading></Loading>
@@ -62,7 +87,7 @@ const MyProducts = () => {
                                 <td className="bg-transparent">{newProduct.resale_price}</td>
                                 <td className="bg-transparent">{newProduct.location}</td>
                                 <td className="bg-transparent">
-                                    <label onClick={() => setDeleteNewProduct(newProduct)} htmlFor="confirm-modal" className="btn btn-xs btn-square btn-outline btn-secondary">
+                                    <label onClick={() => setDeleteNewProduct(newProduct)} htmlFor="confirm-modal" className="btn btn-xs btn-square btn-outline btn-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                     </label>
                                 </td>
@@ -75,11 +100,11 @@ const MyProducts = () => {
                 deleteNewProduct && 
                 <ConfirmModal
                     title={`Are you sure you want to delete?`}
-                    message = {`If you delete ${deleteNewProduct.name}, it cannot be undone!`}
-                    // successAction = {handleDeleteDoctor}
-                    // successBtnName = "Delete"
-                    // modalData = {deleteDoctor}
-                    // closeModal={closeModal}
+                    message = {`If you delete ${deleteNewProduct.title}, it cannot be undone!`}
+                    successAction = {handleDeleteNewProduct}
+                    successBtnName = "Delete"
+                    modalData = {deleteNewProduct}
+                    closeModal={closeModal}
                 ></ConfirmModal>
             }
         </div>

@@ -5,16 +5,16 @@ const ConfirmModal = ({title, message, closeModal, modalData, successAction, suc
         <div>
             <input type="checkbox" id="confirm-modal" className="modal-toggle" />
             <div className="modal">
-                <div className="modal-box">
+                <div className="modal-box bg-stone-200">
                     <h3 className="font-bold text-lg">{title}</h3>
                     <p className="py-4">{message}</p>
                     <div className="modal-action">
                     <label 
                         onClick={() => successAction(modalData)} 
                         htmlFor="confirm-modal" 
-                        className="btn btn-sm btn-error">{successBtnName}
+                        className="btn btn-sm btn-primary">{successBtnName}
                     </label>
-                    <button onClick={closeModal} className='btn btn-outline btn-sm'>Cancel</button>
+                    <button onClick={closeModal} className='btn btn-outline btn-primary btn-sm'>Cancel</button>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@ const DashboardLayout = () => {
 
                     <div className="drawer-side">
                         <label htmlFor="category-drawer-2" className="drawer-overlay"></label> 
-                        <ul className="menu p-4 pt-0 w-56 md:w-64 bg-stone-300 text-base-content">
+                        <ul className="menu p-4 pt-0 w-56 md:w-64 bg-stone-300 lg:bg-inherit text-base-content">
                         <h4 className='text-lg text-primary font-bold font-oswald uppercase mb-2'>Dashboard Menu</h4>
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard">My Orders</Link></li>
                             <li className='mb-2 font-oswald text-secondary'><Link to="/dashboard/addProduct">Add A Product</Link></li>
