@@ -16,7 +16,7 @@ const MyProducts = () => {
         queryKey: ['newProducts'],
         queryFn: async () => {
             try{
-                const res = await fetch('http://localhost:5000/newProducts', {
+                const res = await fetch('https://used-guitars-n-gears-server.vercel.app/newProducts', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -32,7 +32,7 @@ const MyProducts = () => {
 
 
     const handleDeleteNewProduct = newProduct => {
-        fetch(`http://localhost:5000/newProducts/${newProduct._id}`, {
+        fetch(`https://used-guitars-n-gears-server.vercel.app/newProducts/${newProduct._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
